@@ -648,6 +648,7 @@ Get a task info
 
         response = task.as_dict()
         response['info'] = task.info
+        print(response['info'])
         if task.worker is not None:
             response['worker'] = task.worker.hostname
 
