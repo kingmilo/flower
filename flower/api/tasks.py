@@ -647,8 +647,7 @@ Get a task info
             raise HTTPError(404, "Unknown task '%s'" % taskid)
 
         response = task.as_dict()
-        response['info'] = task.info
-        print(response['info'])
+        response['info'] = task.info()
         if task.worker is not None:
             response['worker'] = task.worker.hostname
 
