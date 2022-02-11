@@ -31,10 +31,10 @@ def parse_search_terms(raw_search_value):
             # parsed_search['state'].append(preprocess_search_value(query_part[len('state:'):]))
             state = preprocess_search_value(query_part[len('state:'):])
             parsed_search['state'].append(state)
-            if state == 'STARTED':
-                parsed_search['state'].append('PROGRESS')
-            else:
-                parsed_search['any'] = preprocess_search_value(query_part)
+        if state == 'STARTED':
+            parsed_search['state'].append('PROGRESS')
+        else:
+            parsed_search['any'] = preprocess_search_value(query_part)
     return parsed_search
 
 
